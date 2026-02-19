@@ -15,7 +15,7 @@ server.get('/', (requisicao, resposta) => {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>Reajuste Salarial</title>
 </head>
 
 <body>
@@ -121,7 +121,7 @@ alert("Dados Invalidos - *A idade deve ser maior que 16 anos.*O salário base de
             </head>
 
             <body> 
-            <h1<Agora são ${hora}</h1> 
+            <h1>Agora são ${hora}</h1> 
             </body>
             </html>
             
