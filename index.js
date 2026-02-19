@@ -19,13 +19,8 @@ server.get('/', (req, res) => {
     const anoAtual = new Date().getFullYear();
 
     // Validação básica dos dados
-    if (
-        !matriculaNum ||
-        idadeNum < 16 ||
-        (sexoNum !== 1 && sexoNum !== 2) ||
-        !salarioBaseNum ||
-        anoContratacaoNum < 1960
-    ) {
+    if (!matriculaNum || idadeNum < 16 || (sexoNum !== 1 && sexoNum !== 2) || !salarioBaseNum ||anoContratacaoNum < 1960  ) 
+        {
         return res.send(`
             <h1>Dados Inválidos</h1>
             <p>
@@ -37,12 +32,13 @@ server.get('/', (req, res) => {
             </p>
             <p>Exemplo de URL válida:<br>
             <code>http://localhost:3000/?matricula=123&idade=30&sexo=1&salariobase=2000&anocontratacao=2015</code></p>
-        `);
+              `);
+
     }
 
     const tempoEmpresa = anoAtual - anoContratacaoNum;
 
-    // ===== REAJUSTE =====
+    //  REAJUSTE 
     let reajuste = 0;
     if (idadeNum >= 16 && idadeNum <= 39) {
         reajuste = (sexoNum === 1) ? 0.10 : 0.08;
@@ -52,7 +48,7 @@ server.get('/', (req, res) => {
         reajuste = (sexoNum === 1) ? 0.15 : 0.17;
     }
 
-    // ===== DESCONTO OU ACRÉSCIMO =====
+    // DESCONTO OU ACRÉSCIMO 
     let descontoouacrescimo = 0;
 
     if (tempoEmpresa <= 10) {
@@ -73,10 +69,10 @@ server.get('/', (req, res) => {
         }
     }
 
-    // ===== CÁLCULO DO NOVO SALÁRIO =====
+    //  CÁLCULO DO NOVO SALÁRIO 
     const novoSalario = salarioBaseNum + (salarioBaseNum * reajuste) + descontoouacrescimo;
 
-    // ===== RETORNO HTML =====
+    //  RETORNO HTML 
     res.send(`
         <h2>--- Dados do Funcionário ---</h2>
         Matrícula: ${matriculaNum} <br>
