@@ -1,0 +1,30 @@
+{
+  "name": "aulaaovivo01ppi",
+  "version": "1.0.0",
+  "description": "Primeiro programa para internet usando node +express",
+  "keywords": [
+    "http",
+    "express",
+    "node",
+    "PPI"
+  ],
+  "homepage": "https://github.com/victormendes360-eng/AulaAoVivo01PPI#readme",
+  "bugs": {
+    "url": "https://github.com/victormendes360-eng/AulaAoVivo01PPI/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victormendes360-eng/AulaAoVivo01PPI.git"
+  },
+  "license": "ISC",
+  "author": "Victor Mendes",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
